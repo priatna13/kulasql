@@ -1,0 +1,15 @@
+import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  plugins: [react()],
+  optimizeDeps: {
+    exclude: ['@duckdb/duckdb-wasm'],
+  },
+  server: {
+    port: 5173,
+    proxy: {
+      '/api': process.env.API_ORIGIN ?? 'http://localhost:3000',
+    },
+  },
+})

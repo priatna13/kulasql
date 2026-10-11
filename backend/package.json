@@ -1,0 +1,27 @@
+{
+  "name": "backend",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "node --experimental-strip-types src/index.ts",
+    "build": "tsc -p tsconfig.json --noEmit",
+    "test": "node --experimental-strip-types --test src/auth/age.test.ts src/auth/google.test.ts src/routes/auth.google.http.test.ts src/progress/grant.test.ts src/progress/leaderboard.http.test.ts src/lesson/rules.test.ts src/lesson/content.test.ts src/lesson/lesson.http.test.ts src/routes/waitlist.http.test.ts",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate"
+  },
+  "dependencies": {
+    "@hono/node-server": "^2.1.1",
+    "drizzle-orm": "^0.45.3",
+    "hono": "^4.13.8",
+    "pg": "^8.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.6",
+    "@types/pg": "^8.23.1",
+    "drizzle-kit": "^0.31.11",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3"
+  }
+}
