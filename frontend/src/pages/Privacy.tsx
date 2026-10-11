@@ -25,7 +25,7 @@ export function Privacy() {
         <a href={`mailto:${SITE_FOOTER.supportEmail}`}>{SITE_FOOTER.supportEmail}</a>
       </p>
       <p>
-        <Link to="/">Kembali ke beranda</Link>
+        <Link to="/beranda">Kembali ke beranda</Link>
       </p>
     </main>
   )

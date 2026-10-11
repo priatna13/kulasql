@@ -26,7 +26,8 @@ export default function App() {
       <Chrome />
       <AuthPanel />
       <Routes>
-        <Route path="/" element={<Hub />} />
+        <Route path="/" element={<Navigate to="/kulasql" replace />} />
+        <Route path="/beranda" element={<Hub />} />
         <Route path="/kulasql" element={<Landing />} />
         <Route path="/spreadsheet" element={<Spreadsheet />} />
         <Route path="/dataset" element={<Dataset />} />

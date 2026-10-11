@@ -123,7 +123,7 @@ export function Chrome() {
       </a>
       <div className="chrome-inner">
         <div className="chrome-brand">
-          <Link className="wordmark" to="/">
+          <Link className="wordmark" to="/kulasql">
             {onSheet ? (
               <span className="mark" aria-hidden="true">
                 s
@@ -148,7 +148,7 @@ export function Chrome() {
               <Link to={POSTGRES_PATH} aria-current={onEncyclopedia ? 'page' : undefined}>
                 Ensiklopedia
               </Link>
-              <Link to="/" aria-current={path === '/' ? 'page' : undefined}>
+              <Link to="/beranda" aria-current={path === '/beranda' ? 'page' : undefined}>
                 Beranda
               </Link>
             </div>

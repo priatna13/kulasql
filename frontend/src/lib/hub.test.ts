@@ -10,11 +10,15 @@ function source(path: string): string {
   return readFileSync(new URL(path, import.meta.url), 'utf8')
 }
 
-test('root is the hub and /kulasql stays the on-ramp', () => {
+test('/kulasql is the main page and beranda lives at /beranda', () => {
   const app = source('../App.tsx')
-  assert.match(app, /<Route path="\/" element=\{<Hub/)
+  assert.match(app, /<Route path="\/" element=\{<Navigate to="\/kulasql" replace/)
+  assert.match(app, /<Route path="\/beranda" element=\{<Hub/)
   assert.match(app, /<Route path="\/kulasql" element=\{<Landing/)
+  assert.doesNotMatch(app, /<Route path="\/" element=\{<Hub/)
   assert.doesNotMatch(app, /<Route path="\/" element=\{<Landing/)
+  assert.match(source('../pages/Privacy.tsx'), /to="\/beranda">Kembali ke beranda/)
+  assert.match(source('../components/Chrome.tsx'), /to="\/beranda"/)
   const chrome = source('../components/Chrome.tsx')
   assert.match(chrome, /const onRamp = path === '\/kulasql'/)
   assert.match(
